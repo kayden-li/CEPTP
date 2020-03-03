@@ -1,0 +1,118 @@
+
+.footer{
+    clear: both;
+    height: 170px;
+    background: #333;
+}
+.tu{
+    margin-left: 300px;
+    font-size: 22px;
+    height: 170px;
+    line-height: 155px;
+    color: ghostwhite;
+}
+.footer-100{
+    margin-left: 730px;
+    margin-top: -145px;
+}
+.footer-100 li{
+    margin-right: 60px;
+}
+.footer-100 span{
+    color: rgb(204,204,204);
+    font-size: 17px;
+    margin: 0 auto;
+}
+.footer-100 a{
+    color: rgb(204,204,204);
+    font-size: 12px;
+}
+
+html {  
+  position: relative;  
+  min-height: 100%;  
+}  
+body {  
+  /* Margin bottom by footer height */  
+  margin-bottom: 60px;  
+}  
+.footer{  
+  position: absolute;  
+  bottom: 0;  
+  width: 100%;
+} 
+body {
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+
+/* 遮罩层 */
+#mask{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    filter:alpha(opacity=70); /*IE滤镜，透明度50%*/
+    -moz-opacity:0.7; /*Firefox私有，透明度50%*/
+    opacity:0.7;/*其他，透明度50%*/
+    z-index:9;
+}
+/* 遮罩层 */
+
+
+/* 登录表单 */
+.login-form{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 386px;
+    height: 288px;
+    margin: -144px 0 0 -193px;
+    z-index: 10;
+    background: #fff;
+}
+.login-form .login-bd{
+    margin:30px 0 0 40px;
+}
+.login-form .close{
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 10px 10px 0 0;
+    color: #0e0e0e;
+    cursor: pointer;
+}
+.login-form h3{
+    margin:20px 0 20px 40px;
+    font-size: 18px;
+    font-weight: normal!important;
+    color:#444;
+    line-height:38px;
+}
+.login-form input{
+    display: block;
+    width:296px;
+    height:44px;
+    font-size: 16px;
+    text-indent: 10px;
+    background-color: #fafafa;
+    border:1px solid #f1f1f1;
+    box-shadow: 0 1px 1px #e6e6e6;
+    color:#999;
+    margin:0 0 16px 40px;
+}
+.login-form .login-btn{
+    width: 296px;
+    height: 46px;
+    font-size: 16px;
+    color:#ffffff;
+    margin: 14px 0 0 40px;
+    background-color: #2ab14f;
+    border: none;
+}

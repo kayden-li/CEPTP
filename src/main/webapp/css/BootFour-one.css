@@ -1,0 +1,147 @@
+li{list-style: none;}
+.fl{float: left;}
+.fr{float: right;}
+
+
+.tab-content{
+    width: 88%;
+}
+.groupwork{
+    width: 100%;
+    height: 28px;
+}
+.choice select,span{
+    height: 28px;
+    margin-left: 1%;
+}
+.butn{
+    margin-left: 150px;
+}
+.finish{
+    margin-top: 100px;
+    margin-left: 45%;
+}
+.class .panel-body{
+    height: 80px;
+}
+.panel li{
+    float: left;
+}
+.user-info img{
+    height: 45px;
+    width: 45px;
+    border-radius: 5em;
+}
+.stuNumber{
+    margin-left: 150px;
+    margin-top: 18px;
+}
+.grader,.inf{
+    margin-left: 100px;
+    margin-top: 18px;
+}
+.inf small{
+}
+.evaluate{
+    float: left;
+    margin-left: 10px;
+}
+
+
+
+.blank{
+    margin-left: -135px;
+    width: 1180px;
+}
+.smallnew{
+    border-bottom: 1px solid grey;
+    height: 100px;
+}
+.cent{
+    height: 100px;
+    width: 800px;
+    line-height: 35px;
+    padding-top: 15px;
+    margin-left: 110px;
+    margin-top: -80px;
+}
+.pic{
+    height: 80px;
+    width: 80px;
+}
+.pic img{
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+}
+.cent span{
+    border: 1px solid deepskyblue;
+    color: #00BFFF;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+.cent ul li{
+    padding-left: 20px;
+    color: dimgray;
+}
+.cent ul li a{
+    color: red;
+}
+.fin{
+    height: 100px;
+    width: 800px;
+    line-height: 35px;
+    padding-top: 15px;
+    margin-left: 110px;
+    margin-top: -80px;
+}
+.fin span{
+    border: 1px solid darkgray;
+    color: darkgray;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+.fin ul li{
+    padding-left: 20px;
+    color: dimgray;
+}
+.fin ul li a{
+    color: limegreen;
+}
+
+
+
+
+body {
+	background: url(../img/third.jpg) no-repeat fixed;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+.header {
+	height: 100px;
+	margin: 0 auto;
+	width: 1260px;
+}
+
+.logo a {
+	font-size: 30px;
+	color: black;
+	height: 100px;
+	line-height: 100px;
+	margin-left: 60px;
+}
+
+.content {
+	margin-left: 785px;
+	height: 100px;
+	line-height: 100px;
+}
+.content-1 span:hover{
+	cursor: :pointer;
+}
+#search {
+	height: 30px;
+	width: 200px;
+	border: 1px solid grey;
+	border-radius: 3px;
+}

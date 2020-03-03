@@ -1,0 +1,423 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ol {
+	list-style: none;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+.container {
+	width: 1260px;
+	margin: 0 auto;
+	/*水平范围居中*/
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+.float{
+	display: none;
+	top: 0;
+	width: 1260px;
+	height: 60px;
+	line-height: 60px;
+	margin: 0 auto;
+	position: fixed;
+	background: #2e323e;
+}
+.float.fixed{
+	display: block;
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+}
+
+/*body {
+	background: url(../img/background-6.jpg) no-repeat fixed;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}*/
+
+.header {
+	height: 100px;
+	margin: 0 auto;
+	width: 1260px;
+}
+
+.logo a {
+	font-size: 30px;
+	color: black;
+	height: 100px;
+	line-height: 100px;
+	margin-left: 60px;
+}
+
+.content {
+	margin-left: 785px;
+	height: 100px;
+	line-height: 100px;
+}
+.content-1 span:hover{
+	cursor: :pointer;
+}
+#search {
+	height: 30px;
+	width: 200px;
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+
+/*.content a span{
+	height: 30px;
+	width: 40px;
+}*/
+
+.nav-100 {
+	height: 100px;
+	float: right;
+	margin-top: -100px;
+	margin-right: 35px;
+}
+
+.nav ul {
+	height: 100px;
+	line-height: 100px;
+}
+
+.nav ul li {
+	padding-left: 15px;
+}
+
+.list {
+	line-height: 100px;
+	padding-left: 21px;
+}
+
+.nav a {
+	font-size: 19px;
+	color: black;
+}
+
+.list a:hover {
+	color: lightblue;
+}
+.nav-left{
+	height: 300px;
+	width: 500px;
+	margin-left: 50px;
+	overflow: hidden;
+	
+}
+.nav-left img{
+	height: 300px;
+	width: 500px;
+	transition: all 0.8s;
+}
+.nav-left img:hover {
+	transform: scale(1.2);
+}
+.nav-right{
+	height: 300px;
+	width: 620px;
+	margin-left: 575px;
+	margin-top: -300px;
+}
+.title{
+	font-size: 30px;
+}
+.nav-right-1{
+	margin-top: 10px;
+	line-height: 30px;
+	font-size: 20px;
+}
+.nav-right-1 span ul{
+	margin-top: -28.8px;
+	margin-left: 98px;
+	height: 20.8px;
+}
+.nav-right-1 button{
+	height: 40px;
+	width: 100px;
+	border-radius: 4px;
+	float: right;
+	margin-right: 70px;
+	margin-top: -25px;
+}
+.inner-left{
+	width: 700px;
+	height: 500px;
+	margin-top: 20px;
+}
+.introduct{
+	background: #fff;
+	width: 680px;
+	height: 430px;
+	padding-top: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+.plan-1{
+	background: #F5F8F4;
+	width: 680px;
+	height: 420px;
+	padding-top: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+}
+
+.smallnew{
+    border-bottom: 1px solid grey;
+}
+.cent{
+    height: 100px;
+    width: 500px;
+    line-height: 35px;
+    /*padding-top: 15px;*/
+    margin-left: 145px;
+    margin-top: -80px;
+}
+.cent span{
+    border: 1px solid deepskyblue;
+    color: #00BFFF;
+    border-radius: 4px;
+    margin-left: 20px;
+}
+.cent ul li{
+    padding-left: 20px;
+    color: dimgray;
+}
+.cent ul li h5{
+    color: red;
+}
+
+
+
+
+.blank{
+    margin-left: -135px;
+    width: 1180px;
+}
+.plan-2{
+	background: #F5F8F4;
+	width: 680px;
+	height: 420px;
+	padding-top: 14px;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 10px;
+	position:absolute;
+	overflow-y:auto;
+	/*overflow-x:auto;*/
+}
+.task{
+    height: 100px;
+    border-bottom: #000000 1px solid;
+    margin-top: 20px;
+}
+
+.list-head li{
+    margin-top: 10px;
+    float: left;
+    margin-left: 90px;
+    font-size: medium;
+}
+.list-body li{
+    margin-top: 10px;
+    float: left;
+    font-size: medium;
+}
+
+.pic{
+    height: 80px;
+    width: 80px;
+}
+.pic img{
+    height: 80px;
+    width: 80px;
+    margin-top: 10px;
+}
+.g-cent{
+    margin-left: 20px;
+}
+.inner-right{
+	float: right;
+	width: 410px;
+	height: 480px;
+/*	background: #DFE8F1;*/
+	margin-top: -500px;
+}
+.inner-right span{
+	font-size: 26px;
+	margin-left: 150px;
+}
+.addclass{
+	margin-top: 10px;
+}
+.blank-100 {
+	height: 127px;
+	border-bottom: 1px solid gainsboro;
+	padding-top: 12px;
+}
+.blank-100:hover {
+	background: #f7f7f7;
+	cursor: pointer;
+}
+.blank-50 {
+	line-height: 25px;
+	margin-top: -90.8px;
+}
+/*.blank-100 button:hover {
+	cursor: pointer;
+}*/
+
+.pictutu {
+	overflow: hidden;
+	width: 160px;
+	height: 100px;
+	border: antiquewhite 1px solid;
+	border-radius: 3px;
+	margin-left: 20px;
+}
+
+.pictutu img {
+	width: 160px;
+	height: 100px;
+	cursor: pointer;
+	transition: all 0.8s;
+}
+
+.pictutu img:hover {
+	transform: scale(1.2);
+}
+.related{
+	width: 56px;
+	height: 20px;
+	/*background: blanchedalmond;*/
+	color: #000000;
+	font-size: 17px;
+	float: right;
+	margin-top: 10px;
+}
+.related:hover{
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+.footer {
+	height: 155px;
+	background: #333;
+}
+
+.tu {
+	font-size: 22px;
+	height: 155px;
+	line-height: 155px;
+	color: ghostwhite;
+}
+.footer-100 {
+	margin-left: 500px;
+	margin-top: -145px;
+}
+
+.footer-100 li {
+	margin-right: 60px;
+}
+
+.footer-100 span {
+	color: rgb(204, 204, 204);
+	font-size: 17px;
+	margin: 0 auto;
+}
+
+.footer-100 a {
+	color: rgb(204, 204, 204);
+	font-size: 12px;
+}
+
+
+
+/* 遮罩层 */
+#mask{
+    display: none;
+    position: fixed;
+    width: 100%;
+    height:100%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    filter:alpha(opacity=70); /*IE滤镜，透明度50%*/
+    -moz-opacity:0.7; /*Firefox私有，透明度50%*/
+    opacity:0.7;/*其他，透明度50%*/
+    z-index:9;
+}
+/* 遮罩层 */
+
+
+/* 登录表单 */
+.login-form{
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 386px;
+    height: 288px;
+    margin: -144px 0 0 -193px;
+    z-index: 10;
+    background: #fff;
+}
+.login-form .login-bd{
+    margin:30px 0 0 40px;
+}
+.login-form .close{
+    float: right;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1;
+    margin: 10px 10px 0 0;
+    color: #0e0e0e;
+    cursor: pointer;
+}
+.login-form h3{
+    margin:20px 0 20px 40px;
+    font-size: 18px;
+    font-weight: normal!important;
+    color:#444;
+    line-height:38px;
+}
+.login-form input{
+    display: block;
+    width:296px;
+    height:44px;
+    font-size: 16px;
+    text-indent: 10px;
+    background-color: #fafafa;
+    border:1px solid #f1f1f1;
+    box-shadow: 0 1px 1px #e6e6e6;
+    color:#999;
+    margin:0 0 16px 40px;
+}
+.login-form .login-btn{
+    width: 296px;
+    height: 46px;
+    font-size: 16px;
+    color:#ffffff;
+    margin: 14px 0 0 40px;
+    background-color: #2ab14f;
+    border: none;
+}

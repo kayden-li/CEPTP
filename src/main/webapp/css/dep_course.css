@@ -1,0 +1,294 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+ol {
+	list-style: none;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+body {
+	background: url(../img/third.jpg) no-repeat fixed;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+.container {
+	width: 1260px;
+	margin: 0 auto;
+	/*水平范围居中*/
+}
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+.float{
+	display: none;
+	top: 0;
+	width: 1260px;
+	height: 60px;
+	line-height: 60px;
+	margin: 0 auto;
+	position: fixed;
+	background: #2e323e;
+}
+.float.fixed{
+	display: block;
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+}
+.header {
+	height: 100px;
+	margin: 0 auto;
+	width: 1260px;
+}
+
+.logo a {
+	font-size: 30px;
+	color: black;
+	height: 100px;
+	line-height: 100px;
+	/*margin-left: 60px;*/
+}
+.content {
+	margin-left: 700px;
+	height: 100px;
+	line-height: 100px;
+}
+
+.content button:hover {
+	cursor: pointer;
+}
+.content-1 span:hover{
+	cursor :pointer;
+}
+#search {
+	height: 30px;
+	width: 200px;
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+.content button {
+	border-radius: 4px;
+	background: lightgrey;
+	border: 1px solid grey;
+	height: 30px;
+	width: 40px;
+}
+
+.nav-100 {
+	height: 100px;
+	float: right;
+	margin-top: -100px;
+	margin-right: 50px;
+}
+
+.nav ul {
+	height: 100px;
+	line-height: 100px;
+}
+
+.nav ul li {
+	padding-left: 15px;
+}
+
+.list {
+	line-height: 100px;
+	padding-left: 21px;
+}
+
+.nav a {
+	font-size: 19px;
+	color: black;
+}
+
+.list a:hover {
+	color: lightblue;
+}
+
+.blank-100 {
+	margin-left: -7.6%;
+	width: 1265px;
+	height: 150px;
+	border-bottom: 1px solid gainsboro;
+	padding-top: 12px;
+}
+
+.blank-100:hover {
+	background: #f7f7f7;
+	cursor: pointer;
+}
+
+.blank-50 {
+	margin-left: 500px;
+	line-height: 25px;
+	margin-top: -128.8px;
+}
+
+.blank-100 button {
+	margin-left: 1000px;
+	height: 60px;
+	width: 110px;
+	margin-right: 100px;
+	border-radius: 4px;
+	color: black;
+	background: lightgreen;
+	z-index: -9999;
+	margin-top: -100px;
+}
+
+.blank-100 button:hover {
+	cursor: pointer;
+}
+
+.pictutu {
+	overflow: hidden;
+	width: 222px;
+	height: 125px;
+	border: antiquewhite 1px solid;
+	border-radius: 3px;
+}
+
+.pictutu img {
+	cursor: pointer;
+	transition: all 0.8s;
+}
+
+.pictutu img:hover {
+	transform: scale(1.2);
+}
+
+.Clable {
+	margin-left:8.5%;
+	width: 1260px;
+	height: 129px;
+	position: relative;
+	top: 10px;
+	bottom: 10px;
+	left: 129px;
+}
+
+.Clable ul {
+	width: 1260px;
+	height: 100px;
+	background: #f7f7f7;
+}
+
+.Clable ul li {
+	padding-top: 1px;
+	width: 150px;
+	height: 30px;
+	line-height: 30px;
+	float: left;
+	margin-right: 7px;
+	text-align: left;
+	margin-top: 10px;
+	margin-left: 20px;
+}
+
+.Clable ul li a :hover {
+	color: #55b929;
+}
+
+.lable_span {
+	display: inline-block;
+	padding: 0 20px;
+	width: 160px;
+	overflow: hidden;
+	font-size: 17px;
+}
+
+.footer {
+	height: 155px;
+	background: #333;
+}
+
+.tu {
+	font-size: 22px;
+	height: 155px;
+	line-height: 155px;
+	color: ghostwhite;
+}
+.side li{
+	height: 51px;
+}
+.side{
+	position: fixed;
+	right: 60px;
+	bottom: 20px;
+	margin-bottom: 100px;
+}
+.top{
+	display: none;
+}
+.top.show{
+	display: block;
+}
+
+.footer-100 {
+	margin-left: 500px;
+	margin-top: -145px;
+}
+
+.footer-100 li {
+	margin-right: 60px;
+}
+
+.footer-100 span {
+	color: rgb(204, 204, 204);
+	font-size: 17px;
+	margin: 0 auto;
+}
+
+.footer-100 a {
+	color: rgb(204, 204, 204);
+	font-size: 12px;
+}
+.sort {
+	height: 30px;
+	line-height: 30px;
+	border: 1px solid #e6e6e6;
+	width: 1265px;
+	margin: 0 15.2%;
+
+}
+.sort ul li {
+	height: 20px;
+	line-height: 20px;
+	text-align: center;
+	width: 70px;
+	position: relative;
+	margin-top: 5px;
+	/*border-right: 1px solid #E6E6E6;*/
+	margin-left: 20px;
+	margin-right: 10px;
+}
+
+.sort ul li a {
+	text-decoration: none;
+	color: #000000;
+	position: relative;
+	display: block;
+}
+.sort ul li a:hover{
+	color: #55b929;
+}
+.sort ul >li+li:before{
+	content: "|";
+	position: absolute;
+	display: inline;
+	z-index: 2;
+	margin-left: -53px;
+}

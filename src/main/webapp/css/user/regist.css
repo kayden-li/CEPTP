@@ -1,0 +1,36 @@
+
+.huanchong{height: 50px;width: 10px;}
+#divMain {margin-left: 240px;}
+#divTitle {line-height: 30px; width: 880px; height: 30px; border: 0px solid #d0d0d0;}
+#spanTitle {margin-left: 18px; font-weight: 900;}
+#divBody {width: 880px; height: 400px; border-left: 0px solid #d0d0d0;border-bottom: 0px solid #d0d0d0;border-right: 0px solid #d0d0d0;}
+.tdText {width: 300px; text-align: right;color: #000}
+.tdInput{width: 250px;}
+.tdError {width: 300px;}
+#tableForm {line-height: 50px;}
+#imgVerifyCode {width: 100px;}
+#divVerifyCode {text-align: center; border: 1px solid #e2e2e2;}
+.errorClass { color: #f54f4f; font-size: 11pt; margin-left: 8px;}
+.clphoto{
+	width: 67px;
+	height: 67px;
+	
+}
+.filephoto{
+	width: 67px;
+	height: 67px;
+	border-style: dashed;
+	border-width:2px;
+	border-color: #cccccc;	
+	text-align: center;
+	line-height: 65px;
+	font-weight: bolder;
+	font-size: 30px;
+	color: #cccccc;
+	cursor: pointer;
+	margin-bottom: 30px;
+}
+.container{
+	width: 1024px;
+	margin:0 auto;
+	}

@@ -1,0 +1,239 @@
+/**
+
+四级页面
+
+ */
+/**
+
+2018.01.21
+
+ */
+*{margin: 0; padding: 0; box-sizing: border-box;}
+li{list-style-type: none;}/*去掉li前边的小点*/
+a{text-decoration: none;}/*去掉a标签的下划线*/
+/*通用的内容容器*/
+.container{
+    width: 80%;
+    margin: 0 auto;
+}
+.line{
+    border-right: 1px solid rgba(0,0,0,.1);
+}
+.fl{float: left;}
+.fr{float: right;}
+.light{
+    font-size: 12px;
+    color: grey;
+}
+.font-img{
+    margin: 0 7px;
+    height: 15px;
+    width: 15px;
+}
+/**
+
+header
+    .header
+    .title
+    .title-menu
+    .background-img
+    .exit
+ */
+.header{
+    width: 100%;
+    height: 200px;
+}
+.title{
+    height: 20%;
+}
+.background-img{
+    width: 100%;
+    height: 80%;
+    clear: both;
+}
+.background-img h5{
+    margin-top: 80px;
+    margin-left: 25%;
+    font-weight: lighter;
+    font-family: 宋体;
+    width: 388px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+.title img{
+    margin-top: 5px;
+    height: 30px;
+    width: 30px;
+    background: rgb(0,100,200);
+}
+.title h5{
+    margin-top: 2px;
+    font-weight: lighter;
+    font-size: 25px;
+    color: grey;
+}
+.title-menu{
+    width: 60%;
+    height: 100%;
+}
+.title-menu ul{
+    width: 100%;
+}
+.title-menu li{
+    width: 18%;
+    margin-right: 10px;
+    padding-left: 0.5%;
+    cursor: pointer;
+}
+.title-menu li:hover{
+    background: rgba(0,0,0,.2);
+}
+.title-menu h6{
+    font-size: 15px;
+    font-weight: lighter;
+    padding-top: 10px;
+}
+.exit{
+    width: 50px;
+    height: 100%;
+    padding-right: 20px;
+    padding-top: 12px;
+}
+.exit:hover{
+    background: rgba(0,0,0,.1);
+}
+/**
+
+body
+
+ */
+/**
+
+information
+    .information
+    .self-pic
+    .self-information
+    .on
+ */
+.information{
+    height: 45px;
+}
+.information ul{
+    height: 100%;
+}
+.self-pic{
+    height: 175px;
+    width: 150px;
+    margin-top: -150px;
+    margin-right: 45px;
+    background: #e8e;
+}
+.self-information{
+    height: 100%;
+    width: 10%;
+    text-align: center;
+    font-family: 宋体;
+    padding-top: 12px;
+    cursor: pointer;
+}
+.self-information:hover{
+    color: white;
+    background: rgba(0,0,0,.8);
+    font-weight: lighter;
+}
+.on{
+    color: #4f8;
+    border-bottom: #4f8 solid 3px;
+}
+/**
+
+task
+    .task
+    .task-title
+    .task-title-img
+    .task-title-div
+
+    .task-dispaly
+    .task-result
+    .file
+    .file-a
+    .add-file
+ */
+.task-title-img{
+    height: 35px;
+    width: 35px;
+    margin-left: -248px;
+    background: rgb(124,45,45);
+}
+.task-title .line{
+    width: 50px;
+}
+.task-title-div{
+    margin-left: 75px;
+}
+
+.task-result{
+    margin-bottom: 45px;
+}
+.task-dispaly{
+    width: 100%;
+    border: #222 solid 1px;
+}
+.file-a{
+    margin-top: 15px;
+}
+.file-a a{
+    color: rgb(12,215,190);
+    font-size: 12px;
+    margin-right: 20px;
+}
+.file{
+    width: 100%;
+}
+.file img{
+    width: 50px;
+    height: 50px;
+    margin-left: 5px;
+}
+.file p{
+    width: 53%;
+}
+.file li{
+    width: 220px;
+    padding-top: 8px;
+    height: 75px;
+    border: #555 solid 1px;
+    margin-top: 50px;
+    margin-left: 20px;
+}
+.add-file{
+    border-radius: 50%;
+    text-align: center;
+    width: 25px;
+    color: #44ff88;
+    border: rgb(20,200,120) solid 2px;
+    margin-top: 10%;
+    margin-right: 10%;
+    cursor: pointer;
+}
+#file{
+    display: none;
+}
+
+.choice-style{
+    height: 40px;
+    width: 95px;
+    border: grey solid 2px;
+    margin-top: 150px;
+    margin-right: 35px;
+    padding-top: 9px;
+    text-align: center;
+    cursor: pointer;
+}
+.cho{
+    border-color: #44ff88;
+}
+.crecan{
+    margin-top: 175px;
+    margin-left: 40%;
+}

@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.tit.course.Idao.ICourseDao">
+	<!-- Role_user结果集映射 -->
+	<resultMap type="cn.edu.tit.course.bean.Course" id="course">
+		<id column="course_id" property="course_id" />
+		<result column="course_name" property="course_name" />
+		<result column="course_flag" property="course_flag" />
+		<result column="course_notes" property="course_notes" />
+		<result column="course_img" property="course_img" />
+		<result column="college" property="college" />
+		<result column="clazz" property="clazz" />
+		<result column="plan" property="plan" />
+		<result column="course_label" property="course_label" />
+		<result column="application_pro" property="application_pro" />
+		<result column="create_user" property="create_user" />
+		<result column="create_time" property="create_time" />
+		<result column="update_user" property="update_user" />
+		<result column="update_time" property="update_time" />
+	</resultMap>
+	
+	<resultMap type="cn.edu.tit.course.bean.Course" id="cuserAndcode">
+		<id column="course_id" property="course_id" />
+		<result column="create_user" property="create_user" />
+		<result column="invitation_code" property="invitation_code" />
+	</resultMap>
+	
+	
+	
+	<!-- 添加课程 -->
+	<insert id="addCourse" parameterType="cn.edu.tit.course.bean.Course">
+		insert into ceptp_course(course_id,course_name,course_flag,course_notes,course_img,college,
+		course_label,application_pro,invitation_code,delete_flg,create_user,create_time,update_user,update_time,clazz,plan,publisher,
+		schoolTerm)
+		 values (#{course_id},#{course_name},1,#{course_notes},#{course_img},#{college},
+		#{course_label},#{application_pro},#{invitation_code},0,#{create_user},now(),#{create_user},now(),#{clazz},#{plan},#{publisher},
+		#{schoolTerm});
+	</insert>
+
+	<!-- 获取邀请码 -->
+	<select id="getverify" parameterType="java.lang.String" resultMap="cuserAndcode">
+		select * from ceptp_course where invitation_code = #{invitation_code};
+	</select>
+	
+	<!-- 加入课程 -->
+	<insert id="joinCourse" parameterType="java.util.HashMap">
+		insert into ceptp_cv values (#{course_id},#{user_id},0,#{create_user},now(),#{create_user},now());
+	</insert>
+	
+	<!-- 发布任务 -->
+	<insert id="addTask" parameterType="cn.edu.tit.course.bean.Task">
+		insert into ceptp_task values (#{task_id},#{task_name},#{course_id},#{task_details},
+		#{evaluate_id},#{evaluate_kind},0,#{create_user},now(),#{create_user},now(),#{status},#{delete_time});
+	</insert>
+	
+	<!-- 添加附件 -->
+	<insert id="addAcc" parameterType="cn.edu.tit.course.bean.Accessory">
+		insert into ceptp_accessory(
+			accessory_name,
+			task_id,
+			accessory_path,
+			accessory_kind,
+			delete_flg,
+			create_user,
+			create_time,
+			update_user,
+			update_time,
+			accessory_id
+			
+		) values (#{accessory_name},#{task_id},#{accessory_path},#{accessory_kind},0,#{create_user},now(),#{create_user},now(),#{accessory_id});
+	</insert>
+	
+	<!-- 获取任务创建者id -->
+	<select id="getTaskCreater" parameterType="java.lang.String" resultType="java.lang.String">
+		select create_user from ceptp_task where task_id = #{task_id};
+	</select>
+	
+	<!-- 将提交的任务存放到数据库 -->
+	<insert id="uploadTask" parameterType="cn.edu.tit.course.bean.Task">
+		insert into ceptp_upload_task values (#{task_id},#{uploadTask_details},#{task_details},0,0,#{create_user},now());
+	</insert>
+	<!-- 将提交的实验存放到数据库 -->
+	<insert id="uploadTest" parameterType="cn.edu.tit.course.bean.Task">
+		insert into ceptp_upload_test values (#{task_id},#{uploadTask_details},#{task_details},0,0,#{create_user},now());
+	</insert>
+	
+	<!-- 查询课程 -->
+	<select id="findCouByName" parameterType="java.lang.String" resultMap="course">
+		select * from ceptp_course where course_name like CONCAT('%',#{course_name}, '%') order by update_time desc;
+	</select>
+	
+	<select id="findCouByLabel" parameterType="java.lang.String" resultMap="course">
+		select * from ceptp_course where course_label like CONCAT('%',#{course_label}, '%') order by update_time desc;
+	</select>
+	
+	<select id="findCouByAppro" parameterType="java.lang.String" resultMap="course">
+		select * from ceptp_course where application_pro like CONCAT('%',#{application_pro}, '%') order by update_time desc;
+	</select>
+	
+	<!-- 通过id查询任务 -->
+	<select id="findTextByid" parameterType="java.lang.String" resultType="cn.edu.tit.course.bean.Task">
+		select * from ceptp_task where task_id = #{task_id};
+	</select>
+	<!-- 通过id查询实验 -->
+	<select id="findRestByid" parameterType="java.lang.String" resultType="cn.edu.tit.course.bean.Task">
+		select * from ceptp_test where task_id = #{task_id};
+	</select>
+	<!-- 通过id查询资源 -->
+	<select id="findResByid" parameterType="java.lang.String" resultType="cn.edu.tit.course.bean.Task">
+		select * from ceptp_resource where task_id = #{task_id};
+	</select>
+	<!-- 通过id查询其他 -->
+	<select id="findOtherByid" parameterType="java.lang.String" resultType="cn.edu.tit.course.bean.Task">
+		select * from ceptp_other where task_id = #{task_id};
+	</select>
+	
+	<!-- 根据附件id查询附件路径 -->
+	<select id="getAccPath" parameterType="java.lang.String" resultType="java.lang.String">
+		select accessory_path from ceptp_accessory where accessory_id = #{accessory_id};
+	</select>
+	<!-- 根据附件id查询附件路径 -->
+	<select id="getAccPath" parameterType="java.lang.String" resultType="java.lang.String">
+		select accessory_path from ceptp_accessory where accessory_id = #{accessory_id};
+	</select>
+	
+	<!-- 根据任务id查找附件 -->
+	<select id="getAccList" parameterType="java.util.HashMap" resultType="cn.edu.tit.course.bean.Accessory">
+		select * from ceptp_accessory where task_id = #{task_id} and accessory_kind=#{kind};
+	</select>
+	
+	<!-- 通过id查询任务 -->
+	<select id="getUpbyid" parameterType="java.lang.String" resultType="cn.edu.tit.course.bean.Task">
+		select * from ceptp_upload_task where task_id = #{task_id};
+	</select>
+	<!-- 根据task_id 和 user_id查找task -->
+ 	<select id="getupload" parameterType="java.util.HashMap" resultType="cn.edu.tit.course.bean.Task">
+ 		select * from ceptp_upload_task where task_id = #{task_id} and uploader = #{user_id};
+ 	</select>
+ 	
+ 	<!-- 根据taskid查状态 -->
+ 	<select id="findTaskStatus" parameterType="java.lang.String" resultType="int">
+ 		select status from ceptp_task where task_id = #{task_id};
+ 	</select>
+ 	
+ 	<!-- 根据taskid查状态 -->
+ 	<select id="findTaskGrade" parameterType="java.util.HashMap" resultType="int">
+ 		select grade from ceptp_upload_task where task_id = #{task_id} and uploader = #{user_id};
+ 	</select>
+ 	
+ 	<!-- 评分 -->
+ 	<update id="updategrade">
+ 		update ceptp_upload_task set grade=#{grade} where task_id = #{task_id} and uploader = #{user_id}; 
+ 	</update>
+ 	
+ 	<!-- 根据标签查总记录数 -->
+ 	<select id="getCNumByLable" parameterType="String" resultType="int">
+ 		select count(*) from ceptp_course where course_label=#{course_label};
+ 	</select>
+ 
+ 	<!-- 分页查课程 -->
+ 	<select id="getCByPage" parameterType="java.util.HashMap" resultMap="course">
+ 		select * from ceptp_course where course_label=#{course_label} limit #{begin},#{end};
+ 	</select>
+ 	
+ 	<!-- 根据id查找课程 -->
+ 	<select id="findcByid" parameterType="String" resultMap="course">
+ 		select * from ceptp_course where course_id = #{course_id} order by update_time desc;
+ 	</select>
+ 	
+ 	<!-- 根据userID查找课程 -->
+ 	<select id="findCByUserid" parameterType="String" resultMap="course">
+ 		select * from ceptp_course where create_user = #{user_id} order by update_time desc;
+ 	</select>
+ 	
+ 	<!-- 根据userID获得加入课程id -->
+ 	<select id="findJoinCourseid" parameterType="String" resultType="String">
+ 		select course_id from ceptp_cv where user_id = #{user_id} ;
+ 	</select>
+ 	
+ 	<!--根据courseid查任务  -->
+ 	<select id="getTaskBycid" parameterType="String" resultType="cn.edu.tit.course.bean.Task">
+ 		select * from ceptp_task where course_id = #{course_id} order by delete_time desc;
+ 	</select>
+ 	<!--根据courseid查实验  -->
+ 	<select id="getTestBycid" parameterType="String" resultType="cn.edu.tit.course.bean.Task">
+ 		select * from ceptp_test where course_id = #{course_id} order by delete_time desc;
+ 	</select>
+ 	<!--根据courseid查资源  -->
+ 	<select id="getResourceBycid" parameterType="String" resultType="cn.edu.tit.course.bean.Task">
+ 		select * from ceptp_resource where course_id = #{course_id};
+ 	</select>
+ 	<!--根据courseid查其他  -->
+ 	<select id="getOtherBycid" parameterType="String" resultType="cn.edu.tit.course.bean.Task">
+ 		select * from ceptp_other where course_id = #{course_id};
+ 	</select>
+ 	
+ 	<select id="getDepart" resultType="cn.edu.tit.course.bean.Depart">
+ 		select * from ceptp_depart;
+ 	</select>
+ 	
+ 	<select id="findallCourse" resultMap="course">
+ 		select * from ceptp_course;
+ 	</select>
+ 	
+ 	<select id="findCoursebyDe" parameterType="int" resultMap="course">
+ 		select * from ceptp_course
+ 		where course_label = #{de}
+ 	</select>
+ 	<select id="findJoinCBySUser_id" parameterType="String" resultMap="course">
+ 		select * from ceptp_cv
+ 		where user_id = #{user_id}
+ 	</select>
+ 	
+ 	<select id="findJoinCByTUser_id" parameterType="String" resultMap="course">
+ 		select * from ceptp_course
+ 		where create_user = #{user_id}
+ 	</select>
+ 	
+ 	<select id="getImgById" parameterType="String" resultType="String">
+ 		select course_img from ceptp_course where course_id = #{id};
+ 	</select>
+ 	
+ 	<update id="updateUpTask" parameterType="cn.edu.tit.course.bean.Task">
+ 		update ceptp_upload_task set uploadTask_details = #{uploadTask_details} where task_id=#{task_id} and uploader=#{uploader};
+ 	</update>
+ 	
+ 	<delete id="deleteAcc" parameterType="String">
+ 		delete from CEPTP_accessory where accessory_id = #{acc_id}
+ 	</delete>
+ 	
+ 	<select id="numOfTask" parameterType="String" resultType="int">
+ 		select count(*) from ceptp_upload_task
+		where task_id = #{task_id}
+ 	</select>
+ 	<select id="numOfTest" parameterType="String" resultType="int">
+ 		select count(*) from ceptp_upload_test
+		where task_id = #{task_id}
+ 	</select>
+ 	<!-- 添加资源 -->
+	<insert id="addResource" parameterType="cn.edu.tit.course.bean.Task">
+		insert into ceptp_resource values (#{task_id},#{task_name},#{course_id},#{task_details},
+		0,#{create_user},now(),#{create_user},now(),#{status},#{delete_time},0);
+	</insert>
+ 	<!-- 添加实验 -->
+	<insert id="addTest" parameterType="cn.edu.tit.course.bean.Task">
+		insert into ceptp_test values (#{task_id},#{task_name},#{course_id},#{task_details},
+		0,#{create_user},now(),#{create_user},now(),#{status},#{delete_time});
+	</insert>
+ 	<!-- 添加其他资源 -->
+	<insert id="addOther" parameterType="cn.edu.tit.course.bean.Task">
+		insert into ceptp_other values (#{task_id},#{task_name},#{course_id},#{task_details},
+		0,#{create_user},now(),#{create_user},now(),#{status},#{delete_time});
+	</insert>
+	<!-- 获取课程成员 -->
+	<select id="getMember" parameterType="java.util.HashMap" resultType="cn.edu.tit.user.bean.User">
+		select user_id from ceptp_cv where course_id = #{course_id};
+	</select>
+	<select id="secUpStuTask" parameterType="java.util.HashMap" resultType="cn.edu.tit.course.bean.Task">
+		select * from ceptp_upload_task where task_id = #{task_id};
+	</select>
+	<select id="secUpStuTest" parameterType="java.util.HashMap" resultType="cn.edu.tit.course.bean.Task">
+		select * from ceptp_upload_test where task_id = #{task_id};
+	</select>
+	<!-- 改变任务状态 -->
+	<update id="ChangeStatus_task" parameterType="String">
+		update ceptp_task set `status`=#{status} where task_id=#{id};
+	</update>
+	<update id="ChangeStatus_other" parameterType="String">
+		update ceptp_other set `status`=#{status} where task_id=#{id};
+	</update>
+	<update id="ChangeStatus_test" parameterType="String">
+		update ceptp_test set `status`=#{status} where task_id=#{id};
+	</update>
+	<update id="addDownloadNum" parameterType="String">
+		update ceptp_resource set `download_num`=`download_num`+1 where task_id=#{id};
+	</update>
+</mapper>

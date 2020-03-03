@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.edu.tit.user.Idao.IUserDao">
+	<resultMap type="cn.edu.tit.user.bean.User" id="user">
+		<id column="user_id" property="user_id" />
+		<result column="user_name" property="user_name" />
+		<result column="sex" property="sex" />
+		<result column="class_name" property="class_name" />
+		<result column="professional_title" property="professional_title" />
+		<result column="detail" property="detail" />
+		<result column="face" property="face" />
+		<result column="pro" property="pro" />
+		<result column="qq" property="qq" />
+		<result column="role" property="role" />
+		<result column="mobile" property="mobile" />
+		<result column="delete_flg" property="delete_flg" />
+		<result column="create_user" property="create_user" />
+		<result column="create_time" property="create_time" />
+		<result column="update_user" property="update_user" />
+		<result column="update_time" property="update_time" />
+	</resultMap>
+	
+	
+	
+	<!-- 导入用户信息 -->
+	<insert id="importInfo" parameterType="cn.edu.tit.user.bean.User">
+		insert into ceptp_user
+		(user_id, user_name, sex, class_name,
+		professional_title,
+		detail, password,
+		pro, qq,mobile,
+		delete_flg,
+		create_user,create_time,update_user,update_time,role,user_img)
+		values
+		(#{user_id},
+		#{user_name},#{sex},#{class_name},
+		#{professional_title},#{detail},encode(#{password}, 'ceptp'),
+		#{pro},#{qq},#{mobile},0,
+		#{create_user},now(),#{update_user},now(),#{role},#{face});
+	</insert>
+	<!-- 更新用户信息 -->
+	<update id="ChangeInfo">
+ 		update ceptp_user set detail=#{detail},password=encode(#{password}, 'ceptp'),
+		mobile=#{mobile},user_img=#{face},update_user=#{update_user},update_time=now() where user_id = #{user_id}; 
+ 	</update>
+	<!-- 查询User的信息 -->
+	<select id="findAllUser" resultMap="user">
+		select user_id,user_name,sex,DECODE(`password`,'ceptp'),class_name,professional_title,detail,pro,qq,mobile,delete_flg,create_user,create_time,update_user,update_time,role,user_img from ceptp_user;
+	</select>
+	<!-- 通过id查询某角色的信息 -->
+	<select id="findUserById" parameterType="java.lang.String"
+		resultMap="user">
+		select user_id,user_name,sex,DECODE(`password`,'ceptp'),class_name,professional_title,detail,pro,qq,mobile,delete_flg,create_user,create_time,update_user,update_time,role,user_img from ceptp_user where user_id = #{user_id} and
+		delete_flg = 0;
+	</select>
+	<!-- 查询UserID -->
+	<select id="findUserId" resultType="java.lang.String">
+		select staff_id from
+		ceptp_user;
+	</select>
+	
+	<select id="login" parameterType="java.util.HashMap" resultMap="user">
+		select user_id,user_name,sex,DECODE(`password`,'ceptp'),class_name,professional_title,detail,pro,qq,mobile,delete_flg,create_user,create_time,update_user,update_time,role,user_img from ceptp_user where user_id = #{username} and password=encode(#{password}, 'ceptp')
+	</select>
+ 	<select id="w_Role" parameterType="String" resultType="java.lang.String">
+ 		select role from ceptp_user
+ 		where user_id = #{user_id}
+ 	</select>
+ 	<select id="getImgById" parameterType="String" resultType="String">
+ 		select user_img from ceptp_user where user_id = #{id};
+ 	</select>
+</mapper>

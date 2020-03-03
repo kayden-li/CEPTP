@@ -1,0 +1,44 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+li{list-style: none;}
+a{text-decoration: none;}
+.fl{float: left;}
+.fr{float: right;}
+.content{
+	margin: 0 auto;
+	width: 80%;
+	height: 800px;
+	background: pink;
+}
+h2{
+	padding-left: 100px;
+}
+.container{
+	width: 90%;
+	margin: 0 auto;
+}
+.container li{
+	line-height: 36px;
+	padding-top: 10px;
+}
+.container ul li a{
+	color: black;
+	padding-top: 20px;
+}
+.white{
+	height: 50px;
+}
+.include{
+	width: 90%;
+	margin: 0 auto;
+}
+span{
+	padding-top: 10px;
+}
+
+
+
+

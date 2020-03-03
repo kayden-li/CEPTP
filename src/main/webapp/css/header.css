@@ -1,0 +1,64 @@
+
+.header {
+	height: 100px;
+	margin: 0 auto;
+	width: 1260px;
+}
+
+.logo a {
+	font-size: 30px;
+	color: black;
+	height: 100px;
+	line-height: 100px;
+	margin-left: 60px;
+}
+
+.content {
+	margin-left: 785px;
+	height: 100px;
+	line-height: 100px;
+}
+.content-1 span:hover{
+	cursor: :pointer;
+}
+#search {
+	height: 30px;
+	width: 200px;
+	border: 1px solid grey;
+	border-radius: 3px;
+}
+
+.nav-100 {
+	height: 100px;
+	float: right;
+	margin-top: -100px;
+	margin-right: 64px;
+}
+
+.list {
+	line-height: 100px;
+	padding-left: 21px;
+}
+
+.container {
+	width: 1260px;
+	margin: 0 auto;
+	/*水平范围居中*/
+}
+
+.float{
+	display: none;
+	top: 0;
+	width: 1260px;
+	height: 60px;
+	line-height: 60px;
+	margin: 0 auto;
+	position: fixed;
+	background: #2e323e;
+}
+.float.fixed{
+	display: block;
+	width: 100%;
+	position: fixed;
+	z-index: 9999;
+}
